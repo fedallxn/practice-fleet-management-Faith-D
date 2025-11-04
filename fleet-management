@@ -1,1 +1,32 @@
+/* Task 1: Create Vehicle Class */
 
+class vehicle {
+    constructor(type, make, model, year, milage = 0) {
+        this.type = type;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.milage = milage;
+    }
+/* Task 2: Add Methods */
+    drive(distance) {
+        this.milage = this.milage + distance;
+        return `The ${this.type} was driven ${distance} miles.`
+    }
+    getDetails() {
+        return `This ${this.type} is a ${this.year} ${this.make} ${this.model} that has ${this.milage} miles.`;
+    }
+}
+
+/* Task 3: Add and Use Vehicles */
+let familyVan = new vehicle('SUV','Chevy','Trailblazer', 2000, 160000);
+let newCar = new vehicle('Sports Car', 'Honda', 'S2000', 2007);
+let dailyDriver = new vehicle('Truck', 'Toyota', 'Tacoma', 1999, 125000);
+
+console.log(familyVan.getDetails());
+console.log(familyVan.drive(365));
+console.log(familyVan.getDetails());
+
+console.log(newCar.getDetails());
+console.log(newCar.drive(66));
+console.log(newCar.getDetails());
